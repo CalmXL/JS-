@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象属性遍历, this, caller_callee</title>
+</head>
+<body>
+  <script src="index.js"></script>
+  <script type="text/javascript">
+
+// 1.
+  /*   function foo(){
+      bar.apply(null, arguments);
+      // 相当于 bar(arguments)
+    }
+
+    function bar(){
+      console.log(arguments);
+    }
+
+    foo(1, 2, 3, 4, 5); // 1, 2, 3, 4 ,5
+
+    // bar() => bar.call(arguments) => bar(arguments); */
+
+// 2. Js中typeof可能返回哪些值?
+// object(null), boolean, number, string, undefined, function
+
+// 3. 
+  // function b(x, y, a){
+  //   arguments[2] = 10;
+  //   alert(a);
+  // }
+
+  // b(1, 2, 3);
+
+// 4. 
+/* var f = (
+  function f(){
+    return '1'
+  },
+  function g(){
+    return 2
+  }
+);
+
+console.log(typeof(f)); // function */
+
+
+/* var f = (
+  function f(){
+    return '1'
+  },
+  function g(){
+    return 2
+  }
+)(); */
+
+// console.log(typeof(f)); // number
+
+// 5.
+/* console.log(undefined == null); // true
+console.log(undefined === null); // false
+console.log(isNaN('100')); // false  隐式转换
+console.log(parseInt('1a') == 1); // true */
+
+
+  /* function isNaN(num){
+    // ! NaN 和任何都不相等
+    var res = Number(num) + '';
+    if(res == 'NaN'){
+      return true;
+    }else{
+      return false;
+    }
+  } */
+
+// 6.
+  console.log({} == {}); // false 
+  // 为什么不等于? 引用值对比的是地址
+  // 怎么等于
+  var obj = {};
+  var obj1 = obj;
+  console.log(obj == obj1);
+
+
+// 7.
+  var a = '1';
+  function test(){
+    var a = '2';
+    this.a = '3';
+    console.log(a);
+  }
+  test();
+  new test();
+  console.log(a);
+
+// 8.
+  var a = 5;
+  function test1(){
+    a = 0;
+    console.log(a);
+    console.log(this.a);
+    var a;
+    console.log(a);
+  }
+
+  test1(); // 0, 5, 0  this => window
+  new test1(); // 0, undefined, 0 
+
+  </script>
+</body>
+</html>

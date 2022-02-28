@@ -1,0 +1,99 @@
+1.函数
+  数学函数:
+  x,y 任意x 确定的y x自变量 y => x函数
+  y = f(x) 函数值就是确定的 有确定性
+
+  函数式编程
+  function test(a, b, c..){
+    // 执行语句
+  }
+
+  耦合问题:
+    代码重复度高.
+  高内聚,低耦合. => 模块的单一责任值
+  解耦合
+
+
+  1. 最基本的函数写法 ==> 函数声明
+
+    function test(参数){
+      函数执行语句;
+    }
+
+    函数名的命名规则:
+      1.不能数字开头
+      2.以字母_$开头
+      3.包含数字
+      4.小驼峰命名法 myWonderfulTest
+
+    function test() {
+      var a = b = 1; // 
+    }
+
+    test();
+    
+    console.log(b); // 1  泄露变量
+
+  2.表达式 字面量方法
+  var test = function test1() {
+    var a = 1,
+        b = 1;
+    console.log(a, b);
+    test1();
+  }
+
+  test1(); // ✖
+  匿名函数表达式  函数字面量
+  var test = function() { // ==> 匿名函数
+    var a = 1,
+        b = 1;
+    console.log(a, b);
+  }
+
+2. 函数组成部分
+  function 函数名(可选) 返回值() return 
+  
+  var aa = Number(window.prompt('a'));
+  var aa = Number(window.prompt('b'));
+                // 占位 => 形式上占位,形式参数
+                  形参
+  function test(a, b) {
+    console.log(a + b);
+  }
+      // 实际参数 实参
+  test(aa, bb);
+
+// ------------------------------
+  function test(a, b, c) {
+    console.log(a, b, c);
+  }
+
+  test(1, 2); // 1 2 undefined
+
+  test(1, 2, 3, 4); // 不会报错
+
+  总结: 形参和实参数量可以不等
+
+3. arguments
+
+实参传入值,函数内部时可以更改实参的值
+实参没有传入值,函数内部不能更改,
+
+4. return
+
+函数式编程: 
+  一个固定的功能或者是程序段被封装的过程
+  实现一个固定的功能或者程序
+  在这个封装体中需要一个入口和一个出口
+  入口就是参数,出口就是返回
+
+// 作业
+1. 定义一个函数,从wp接受一个饮料名称
+    函数返回一个对应的价格
+2. 定义一个函数,从wp接受第一个数
+  接收一个运算符号,在接收第二个数,利用函数进行运算
+  并返回运算结果
+3. 定义一个函数, 从wp接受一个n,算出n的阶乘不能用 for
+4. 定义一个函数,从wp接收一个n,算出斐波那契数列的第n位,
+  不能用for循环.
+

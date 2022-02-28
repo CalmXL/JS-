@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课时8作业</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+
+    // 作业1
+    // 写一个构造函数，接收数字类型的参数，参数数量不定，
+    // 完成参数相加和相乘的功能
+
+   
+
+    function AddMul(){
+      var args = arguments,
+          res;
+      this.add = function(){
+        res = 0;
+        loop('add', res);
+      }
+      this.mul = function(){
+        res = 1;
+        loop('mul', res);
+      }
+      function loop(method, res){
+        for(var i = 0; i < args.length; i++){
+          var item = args[i];
+          if(method === 'add'){
+            
+            res += item;
+          }else if(method === 'mul'){
+            res *= item;
+          }
+        }
+        console.log(res);
+      }
+    }
+    var am1 = new AddMul(1, 2, 3, 4);
+    
+    am1.add();
+    am1.mul();
+
+/* 
+    function Compute() {
+      var args = arguments,
+          res;
+      this.plus = function() {
+        res = 0;
+        loop('add', res);
+      }
+      this.times = function() {
+        res = 1;
+        loop('mul', res);
+      }
+      function loop(method, res) {
+        for(var i = 0; i < args.length; i++){
+          var item = args[i];
+              if(method === 'add') {
+                res += item;
+              } else if(method === 'mul') {
+                res *= item;
+              }
+        }
+        console.log(res);
+      }
+    }
+
+    var compute = new Compute(2, 4, 6);
+    compute.plus();  // 12
+    compute.times(); // 48
+ */
+
+    /* 
+      作业2
+        写一个构造车的函数，可以设置车的品牌，颜色，排量
+        写一个构造消费者的函数，可以设用户的名字，年龄，收入，
+        通过选车的方法，实例化该用户喜欢的车，在设置车的属性
+    */
+
+    function Car(opt){
+      this.brand = opt.brand,
+      this.color = opt.color,
+      this.displacement = opt.displacement
+      this.myCar = function(){
+        console.log(`My car brand is ${this.brand}, color
+        is ${this.color}, displacement is ${this.displacement}`);
+        console.log(this.displacement);
+      }
+    }
+
+    function Consumer(user){
+      this.name = user.name,
+      this.age = user.age,
+      this.earning = user.earning,
+      this.choiceCar = function(){
+        return new Car(user.opt);
+      }
+    }
+
+    var c1 = new Consumer({
+      name: 'xiaomeng',
+      age: 16,
+      earning: '30K',
+      opt:{
+        brand: 'benz',
+        color: 'white',
+        displacement: 3.0
+      }
+    });
+
+
+    var car = c1.choiceCar();
+    console.log(car);
+    car.myCar();
+
+
+
+  </script>
+</body>
+</html>

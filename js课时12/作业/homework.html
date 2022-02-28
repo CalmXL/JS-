@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    1. 打印一个参数值以内,参数能被3/5/7整除的数
+    2. 打印斐波那契数列的第N位
+    3. 打印从0到一个数的累加值 
+-->
+  <script type="text/javascript">
+    var initDiv = (function(){
+      function div(num){
+        var arr = [];
+        for(var i = 0; i <= num; i++){
+          if(i % 3 === 0 || i % 5 === 0 || i % 7 === 0){
+            arr.push(i);
+          }
+        }
+        return arr
+      }
+      return div
+    })()
+
+    // console.log(initDiv(100));
+
+    // 1 1 2 3 5 8
+    var initFibinacci = (function(){
+      var num1 = 1;
+      var num2 = 1;
+      function fib(n){
+        if(n === 1){
+          return 1
+        }
+        if(n === 2){
+          return 1
+        }
+        if(n > 2){  
+          return fib(n - 1) + fib(n - 2)
+        }
+      }
+      return fib
+    })()
+
+    // var res = initFibinacci(6);
+    // console.log(res);
+
+    // 1 2 3 4 5
+    var cumulative = (function(){
+      var sum = 0;
+      function add(n){
+        for(var i = 0; i <= n; i++){
+          sum += i;
+        }
+        return sum
+      }
+      return add
+    })()
+
+    console.log(cumulative(6));
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    作业:写一个函数,接受任意字符串,算出这个字符串的总字节数 
+  -->
+  <script type="text/javascript">
+
+    function computerByte(str){
+      var byte = 0;
+
+      for(var i = 0; i < str.length; i++){
+        (function(){
+          var code = str.charCodeAt(i);
+          // console.log(code);
+          if(code <= 255){
+            byte += 1;
+          }else{
+            byte += 2;
+          }
+        })()
+      }
+    
+     /*  GO = {
+        computerByte: f(){}
+      }
+
+      AO = {
+        str:'xxx'
+        byte: 0,
+        i: 0,
+      } 
+
+      AO={
+        code: undefined
+      }
+      
+      cB定义 c.scope: => 0: GO
+      cB执行 c.scope: => 0: cb => AO
+                        1: GO
+      IIFE定义: i.scope => 0: cb => AO
+                          1: GO
+      IIFE执行: i.scope => 0: IIFE => AO
+                          1: cb => AO
+                          2: GO
+      IIFE执行完毕销毁: i.scope =>  0: cb => AO
+                                  1: GO
+
+      IIFE执行: i.scope => 0: IIFE => AO
+                          1: cb => AO
+                          2: GO
+      IIFE执行完毕销毁: i.scope =>  0: cb => AO
+                                  1: GO
+
+      IIFE执行: i.scope => 0: IIFE => AO
+                          1: cb => AO
+                          2: GO
+      IIFE执行完毕销毁: i.scope =>  0: cb => AO
+                                  1: GO
+      
+      cb执行完毕: c.scope => 0: GO
+      IIFE.scope不存在
+      */
+    
+     
+
+      console.log(byte);
+
+    }
+
+    computerByte('str@#$');
+
+
+    // ? 方法2: 首先字节数 = str.length
+    // 然后判断 > UNICODE 255 的位数,在进行+1
+  </script>
+</body>
+</html>

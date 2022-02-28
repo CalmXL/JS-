@@ -1,0 +1,185 @@
+一.五大主流的浏览器 内核
+
+  IE        trident
+  chorme    webkit blink
+  safari    webkit
+  firefox   gecko
+  opera     presto
+
+二.浏览器的历史 和 JS 的诞生
+
+  1.1990年 
+    蒂姆 伯纳斯 李 超文本分享资讯的人
+    world wide web 移植到c => libwww/nexus
+    允许别人浏览他人编写的网站
+
+  2.1993年
+    美国  伊利诺大学 NCSA组织 (马克 安德森)
+    MOSIAC浏览器 显示图片
+    图形化浏览器
+
+  3.1994年
+    马克 安德森 和 吉姆 克拉克(SGI公司硅图)
+    一起建立 MOSIAC communication corporation 公司
+    MOSIAC => 伊利诺大学的版权 => 
+    转让给 spy glass公司
+    创立 Netscape communication corporation 公司
+    网景公司 => 开发netscape navigator 浏览器
+
+  4.1996年
+    微软公司收购 spy glass
+    IE internet explorer 1.0 
+    IE3 发布 出现 Jscript 
+
+    网景公司 Brendan eich 在NETSCAPE NAVIGATOR
+    开发出了 livescript
+  
+    java火起来了,网景livescript不温不火,
+    和 SUN 公司,合作推广宣传产品,livescript => javascript
+
+  5.2001年
+    IE6 XP 诞生
+    JS引擎 
+
+  6.2003年
+    mozilla公司  firefox  => netscape navigator 改的
+
+  7.2008年
+    google 基于webkit blink gears
+    开发出 chorme => v8引擎 => JS引擎
+      1.直接翻译机器码
+      2.独立于浏览器运行
+
+    progressive web app 渐进式 WEB APP 
+
+  8.2009年
+    甲骨文orcale 收购sun公司
+    JS的所有权给甲骨文
+
+三. ECMA 
+  European Computer Manufactures Association
+  欧洲计算机制造联合会
+  评估,开发,认可电信,计算机标准
+  
+  ECMA-262 脚本语言的规范 ECMAScript
+
+  ES5,ES6, 规范化脚本语言
+
+四.编程语言
+  1. 编译型
+    源码 => 编译器 => 机器语言 => 可执行的文件
+  2. 解释型
+    源码 => 解释器 => 解释一行就执行一行
+    解释型语言 不需要根据不同的系统平台进行移植
+
+五.脚本语言
+  脚本引擎 => 解释器 => 
+  前端  javascript 客户端脚本
+  后端  php        服务端脚本
+
+  前端脚本语言:
+    javascript 
+    微软:
+      jscript 
+      vbscript
+
+六.Javascript
+  1.ECMAScript
+    语法,变量,关键字,保留字,值,原始类型,引用类型,对象,继承,函数
+  2.DOM  document object model W3C规范
+  3.BOM borwser object model  没有规范
+
+  JS引擎  单线程
+  可以模拟多线程, 轮转时间片
+  短时间之内轮流执行多个任务的片段
+
+  1. 任务1 任务2
+  2. 切分任务1 任务2
+  3. 随机排列这些任务片段,组成队列
+  4. 按照这个队列顺序将任务片段送进Js进程
+  5. JS线程执行一个又一个的任务片段
+
+  <script type="text/javascript" src="js/index.js">
+    外部引入,内部代码无效果
+  </script>
+  <script type="text/tpl"></script>
+
+七.编程语言:
+  变量,数据结构,函数,运算
+
+八.变量: 容器 => 存储数据 后续使用
+  var a; 声明 => varible
+  a = 3; 变量赋值
+  var a = 3; 变量声明赋值
+  // 俩个部分组成
+  // 声明变量   变量赋值
+
+  var x = 1,
+      y = 2;
+
+  企业开发
+    命名规范
+      不能以数字开头, 
+      字母_$开头,
+      可以包含 字母_$数字
+      关键字 保留字
+      语义化 结构化
+      小驼峰
+      myEnglishName
+
+九.JS的值
+  原始值 => 基本类型
+    Number String Boolean undefined null
+      
+      布尔值 true false
+        计算机非真既假
+
+      undefined 未定义
+      null 空值 初始化组件 销毁函数 占位
+
+    动态语言 => 脚本语言 => 解释性语言 => 弱类型语言
+    静态语言 => 编译型语言 => 强类型语言 
+
+  引用值:
+    object array function date reg 
+    
+十.栈堆初识
+  原始值: 保存在栈中
+  引用值: 栈种保存的是值所在堆的地址,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
