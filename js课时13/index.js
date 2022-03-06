@@ -43,30 +43,38 @@
 //? 3.对象枚举 => 遍历 
 // var arr = [1, 2, 3, 4, 5]; 
 
+// for(var i in arr){
+//   console.log(i);
+// }
+
 // for(var i = 0; i < arr.length; i++){
 //   console.log(arr[i]);
 // }
 
-// var car = {
-//   brand: 'Benz',
-//   color: 'red',
-//   displacement: '3.0',
-//   lang: '5.0',
-//   width: '2.5'
-// }
-
-// for(key in car){
-//   // js引擎: car.key => car['key'] => undefined
-//   console.log(car[key]);
-// }
-
-// ? 4.hasOwnProperty
-/* var obj = {
-  name: 'xiaoye',
-  age: 32
+/* var car = {
+  brand: 'Benz',
+  color: 'red',
+  displacement: '3.0',
+  lang: '5.0',
+  width: '2.5'
 }
 
-var res = obj.hasOwnProperty('age');
+for(key in car){
+  // console.log(car.key);
+  // js引擎: car.key => car['key'] => undefined
+  console.log(car[key]);
+} */
+
+// ? 4.hasOwnProperty
+
+// var obj = {
+//   name: 'xiaoye',
+//   age: 32
+// }
+// obj.__proto__.class = 'jj';
+// console.log(obj.__proto__);
+
+/* var res = obj.hasOwnProperty('name');
 console.log(res);// false
 
 
@@ -86,9 +94,10 @@ Object.prototype.name = 'Object';
 var car = new Car();
 console.log(car);
 for(var key in car){
-  if(car.hasOwnProperty(key)){
-    console.log(key + ':' + car[key]); 
-  }
+  console.log(key + ':' + car[key]);
+  // if(car.hasOwnProperty(key)){
+  //   console.log(key + ':' + car[key]); 
+  // }
 } */
 
 // ? 5.'str' in car
@@ -107,7 +116,7 @@ for(var key in car){
 // }
 
 // Car.prototype = {
-//   displacement: '3,0'
+//   displacement: '3.0'
 // }
 
 // var car = new Car();
@@ -171,7 +180,9 @@ if(str === '[object Array]'){
 
 
 /* var arr = new Array(1, 2, 4);
+// ? Array.prototype.toString() 返回一个字符串,表示指定的元素和数组
 console.log(arr.toString()); // 1,2,4
+// ? Object.prototype.toString() 返回一个表示该对象的字符串
 console.log(Object.prototype.toString.call(arr)); // [object Array] */
 
 // ?7.this
@@ -182,6 +193,7 @@ console.log(Object.prototype.toString.call(arr)); // [object Array] */
 // 4. 构造函数的this指向实例化对象
 
 /* function test(b){
+  console.log(this);
   this.d = 3;
   var a = 1;
   function c(){}
@@ -190,8 +202,8 @@ console.log(Object.prototype.toString.call(arr)); // [object Array] */
 test(123);
 console.log(d);// 3
 console.log(window.d);// 3
-console.log(this.d);// 3 */
-
+console.log(this.d);// 3
+ */
 /**
  * AO = {
  *    arguments: [123]
@@ -242,12 +254,13 @@ function Programmer(){
   this.work = 'Programming'
 }
 
-var p = new Person();
+var p = new Programmer();
 console.log(p); */
 
 
 // ? 8.callee/ caller
 /* function test(a, b, c){
+  console.log(arguments.callee);
   console.log(arguments.callee.length); // 3
   console.log(arguments.length); // 2
   console.log(test.length); // 3
@@ -286,13 +299,13 @@ console.log(res); */
 // console.log(sum);
 
 // ? caller 返回当前被调用函数的函数引用
-// function test1(){
-//   test2();
-// }
+function test1(){
+  test2();
+}
 
-// function test2(){
-//   console.log(test2.caller);
-// }
+function test2(){
+  console.log(test2.caller);
+}
 
-// test1(); 
+test1(); 
 

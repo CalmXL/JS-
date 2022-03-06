@@ -11,7 +11,7 @@
   <script type="text/javascript">
 
 // 1.
-  /*   function foo(){
+    function foo(){
       bar.apply(null, arguments);
       // 相当于 bar(arguments)
     }
@@ -22,7 +22,7 @@
 
     foo(1, 2, 3, 4, 5); // 1, 2, 3, 4 ,5
 
-    // bar() => bar.call(arguments) => bar(arguments); */
+    // bar() => bar.call(arguments) => bar(arguments);
 
 // 2. Js中typeof可能返回哪些值?
 // object(null), boolean, number, string, undefined, function
@@ -77,16 +77,16 @@ console.log(parseInt('1a') == 1); // true */
   } */
 
 // 6.
-  console.log({} == {}); // false 
+/*   console.log({} == {}); // false 
   // 为什么不等于? 引用值对比的是地址
   // 怎么等于
   var obj = {};
   var obj1 = obj;
-  console.log(obj == obj1);
+  console.log(obj == obj1); */
 
 
 // 7.
-  var a = '1';
+ /*  var a = '1';
   function test(){
     var a = '2';
     this.a = '3';
@@ -94,10 +94,10 @@ console.log(parseInt('1a') == 1); // true */
   }
   test();
   new test();
-  console.log(a);
+  console.log(a); */
 
 // 8.
-  var a = 5;
+ /*  var a = 5;
   function test1(){
     a = 0;
     console.log(a);
@@ -107,7 +107,7 @@ console.log(parseInt('1a') == 1); // true */
   }
 
   test1(); // 0, 5, 0  this => window
-  new test1(); // 0, undefined, 0 
+  new test1(); // 0, undefined, 0  */
 
   </script>
 </body>

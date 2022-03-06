@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1.数组去重
+    // var arr1 = [1,1,2,3,4,6,3,6,'a','a'];
+    /* Array.prototype.unique = function(){
+      
+      var arr = [];
+      for(var i = 0; i < this.length; i++){
+        var flag = arr.indexOf(this[i]);
+        if(flag === -1){
+          arr.push(this[i]);
+        }
+      }
+      return arr
+    } */
+
+    // Array.prototype.unique = function(){
+    //   var obj = {};
+    //   var arr = [];
+    //   for(var i = 0; i < this.length; i++){
+    //     obj[this[i]] = this[i];
+    //   }
+
+    //   for(var key in obj){
+    //     arr.push(obj[key]);
+    //   }
+    //   return arr
+    // }
+
+      Array.prototype.unique = function(){
+        var temp = {},
+            newArr = [];
+
+        for(var i = 0; i < this.length; i++){
+          // if(!temp[this[i]]){ // 会有问题
+          if(!temp.hasOwnProperty(this[i])){
+            temp[this[i]] = this[i];
+            newArr.push(this[i]);
+          }
+        }
+        return newArr;
+      }
+
+    // var uniqueArr = arr1.unique();
+    // console.log(uniqueArr);
+
+   
+    // 封装myTypeof
+    // function myTypeof(elem){
+    //   // var res = typeof (elem)
+    //   // if(res !== 'object'){
+    //   //   return res
+    //   // }else{
+    //   //   return Object.prototype.toString.call(elem)
+    //   // }
+    //   return Object.prototype.toString.
+    //   call(elem)
+    // }
+
+    // function myTypeof1(val){
+    //   var type = typeof(val);
+    //   var toStr = Object.prototype.toString;
+    //   var res = {
+    //     '[object Object]': 'object',
+    //     '[object Array]': 'array',
+    //     '[object Number]': 'object number',
+    //     '[object String]': 'object string',
+    //     '[object Boolean]': 'object boolean',
+    //   };
+    //   if(val === null){
+    //     return 'null';
+    //   }else if(type === 'object'){
+    //     var ret = toStr.call(val);
+    //     return res[ret];
+    //   }else{
+    //     return type;
+    //   }
+    // }
+
+    // console.log(myTypeof());
+
+    // undefined, boolean, number, string, null
+    // array, object, object-number, object-boolean, object-boolean
+
+    // Object.prototype.toString.call();
+    // [object Object],
+    // [object Array],
+    // [object Number],
+    // [object Boolean],
+    // [object String],
+  </script>
+</body>
+</html>
